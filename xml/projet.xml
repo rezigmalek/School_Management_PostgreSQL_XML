@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="transform.xsl"?>
+<centreFormations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema.xsd">
+  <formation>
+    <titre>UX/UI Design TEST MODIF</titre>
+    <intitule>Designer d&amp;amp;#039;Interface</intitule>
+    <categorie>Design</categorie>
+    <description>Comprendre les principes de l’ergonomie et du design d’interface pour créer des applications intuitives.</description>
+    <formateur>Mohamed Kaci</formateur>
+    <dateDebut>2025-06-01</dateDebut>
+    <dateFin>2025-06-30</dateFin>
+    <type>Niveau Débutant</type>
+    <duree unite="semaines">4</duree>
+    <prix devise="DZD">50000</prix>
+  </formation>
+  <formation>
+    <titre>Cybersécurité des Applications Web</titre>
+    <intitule>Spécialiste Sécurité Web</intitule>
+    <categorie>Sécurité</categorie>
+    <description>Protection des applications web contre les failles comme XSS, CSRF, injections SQL.</description>
+    <formateur>Nour El Houda Amari</formateur>
+    <dateDebut>2025-09-10</dateDebut>
+    <dateFin>2025-10-20</dateFin>
+    <type>Niveau Avancé</type>
+    <duree unite="semaines">6</duree>
+    <prix devise="DZD">90000</prix>
+  </formation>
+  <formation>
+    <titre>DevOps et CI/CD</titre>
+    <intitule>Ingénieur DevOps</intitule>
+    <categorie>Infrastructure</categorie>
+    <description>Automatiser le déploiement d’applications avec Docker, Jenkins et GitHub Actions.</description>
+    <formateur>Karim Mekhloufi</formateur>
+    <dateDebut>2025-10-01</dateDebut>
+    <dateFin>2025-11-01</dateFin>
+    <type>Niveau Intermédiaire</type>
+    <duree unite="semaines">5</duree>
+    <prix devise="DZD">65000</prix>
+  </formation>
+  <formation>
+    <titre>TEST </titre>
+    <intitule>TEST</intitule>
+    <categorie>TEST</categorie>
+    <description>TEST</description>
+    <formateur>TEST</formateur>
+    <duree unite="jours">20</duree>
+    <dateDebut>2025-05-09</dateDebut>
+    <dateFin>2025-05-24</dateFin>
+    <type>TEST</type>
+    <prix devise="DZD">45000</prix>
+  </formation>
+</centreFormations>

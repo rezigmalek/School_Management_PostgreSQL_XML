@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="centreFormations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="formation" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="titre" type="xs:string"/>
+              <xs:element name="intitule" type="xs:string"/>
+              <xs:element name="categorie" type="xs:string"/>
+              <xs:element name="description" type="xs:string"/>
+              <xs:element name="formateur" type="xs:string"/>
+              <xs:element name="dateDebut" type="xs:date"/>
+              <xs:element name="dateFin" type="xs:date"/>
+              <xs:element name="type" type="xs:string"/>
+              <xs:element name="duree">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:positiveInteger">
+                      <xs:attribute name="unite" type="xs:string" use="required"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="prix">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:positiveInteger">
+                      <xs:attribute name="devise" type="xs:string" use="required"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
