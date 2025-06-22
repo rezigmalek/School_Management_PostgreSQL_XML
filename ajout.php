@@ -1,8 +1,8 @@
 <?php
-include_once 'includes/db.php'; // Connexion à PostgreSQL
+include_once 'includes/db.php'; 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Récupérer les données du formulaire
+    
     $titre = $_POST['titre'];
     $intitule = $_POST['intitule'];
     $categorie = $_POST['categorie'];
@@ -16,10 +16,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $prix = $_POST['prix'];
     $devise = $_POST['devise'];
 
-    // Charger le fichier XML existant avec SimpleXML
+    
     $xml = simplexml_load_file('xml/projet.xml');
 
-    // Ajouter une nouvelle formation
+   
     $formation = $xml->addChild('formation');
     $formation->addChild('titre', $titre);
     $formation->addChild('intitule', $intitule);
@@ -34,15 +34,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $priceElement = $formation->addChild('prix', $prix);
     $priceElement->addAttribute('devise', $devise);
 
-    // Convertir en DOMDocument pour sauvegarder avec indentation
+    
     $dom = new DOMDocument('1.0', 'UTF-8');
     $dom->preserveWhiteSpace = false;
     $dom->formatOutput = true;
     $dom->loadXML($xml->asXML());
 
-    // Sauvegarder dans le fichier XML
+    
     if ($dom->save('xml/projet.xml')) {
-        // 🔄 Importer dans la base uniquement les nouvelles formations
+        
         $domFinal = new DOMDocument();
         $domFinal->load('xml/projet.xml');
         $formations = $domFinal->getElementsByTagName('formation');
@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $xmlContent = $singleDom->saveXML();
 
-            // Vérifier si cette formation existe déjà (on compare les textes XML)
+            
             $check = $pdo->prepare("SELECT COUNT(*) FROM formations WHERE contenu_xml::text = :xml");
             $check->bindParam(':xml', $xmlContent);
             $check->execute();
@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
 
-        // Redirection après succès
+        
         header("Location: api/index.php?message=Formation ajoutée avec succès");
         exit();
     } else {
