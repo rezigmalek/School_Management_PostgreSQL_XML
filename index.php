@@ -89,7 +89,7 @@ form {
     margin-bottom: 20px;
 }
 button[type="button"] {
-    background-color: #007bff; /* bleu Bootstrap */
+    background-color: #007bff; 
     color: white;
     border: none;
     padding: 8px 16px;
